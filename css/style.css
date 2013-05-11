@@ -2,7 +2,7 @@
   font-family: 'Iceland';
   font-style: normal;
   font-weight: 400;
-  src: local('Iceland'), local('Iceland-Regular'), url(font/iceland.woff) format('woff');
+  src: local('Iceland'), local('Iceland-Regular'), url(../font/iceland.woff) format('woff');
 }
 
 html {
