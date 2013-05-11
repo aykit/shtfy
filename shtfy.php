@@ -70,6 +70,7 @@ function redirect($token)
     header("Location: $url", true, 301);
 }
 
+// source: http://programanddesign.com/php/base62-encode/
 function base62_encode($val)
 {
     $base=62;
@@ -83,6 +84,7 @@ function base62_encode($val)
     return $str;
 }
 
+// source: http://programanddesign.com/php/base62-encode/
 function base62_decode($str)
 {
     $base=62;
