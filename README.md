@@ -1,4 +1,4 @@
 shtfy
 =====
 
-URL-shortifier run by aykit on ay.vc
+URL-shortifier run by [aykit](http://aykit.org) on [ay.vc](http://ay.vc)

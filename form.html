@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/style.css" rel="stylesheet" media="screen">
+  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Iceland" rel="stylesheet" type="text/css">
+  <title>shtfy</title>
+</head>
+<body>
+  <div class="container">
+    <div class="shtfy-search">
+      <h1>
+        shtfy
+        <span class="about">
+        <a href="about.html">
+          about
+        </a>
+        </span>
+      </h1>
+      <form action="shorten/" method="get" class="input-append">
+        <input id="longurl" name="url" type="text" class="span2">
+        <input type="submit" class="btn">
+      </form>
+      <ul id="shorturls" class="unstyled">
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script>
+    var form = $("form");
+    form.on("submit", function(e) {
+      e.preventDefault();
+
+      var longurl = $("#longurl").val();
+      if (!longurl)
+        return;
+
+      var request = $.ajax({
+        url: form.attr("action"),
+        data: { url: longurl }
+      });
+
+      request.done(function (response) {
+        var input = $("<input type=text readonly/>");
+        input.val(response);
+
+        input.on("click", function() {
+          input.select();
+        });
+        input.on("mouseup", function(e) {
+          e.preventDefault();
+        });
+
+        var target = $("<span class=target></span>")
+        target.text(longurl);
+
+        var li = $("<li/>");
+        li.hide();
+        li.append(input);
+        li.append(" ↝ ");
+        li.append(target);
+        $("#shorturls").append(li);
+        li.fadeIn();
+      });
+    });
+  </script>
+</body>
+</html>

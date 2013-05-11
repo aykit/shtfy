@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/style.css" rel="stylesheet" media="screen">
+  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Iceland" rel="stylesheet" type="text/css">
+  <title>about shtfy</title>
+</head>
+<body>
+  <div class="container">
+    <div class="pusher">
+      &nbsp;
+    </div>
+    <p>
+      <a href="form.html">
+        back to 
+        <span class="shtfy">
+          shtfy
+        </span>
+      </a>
+    <p>
+      shtfy is a service run by 
+      <a href="http://aykit.org/sites/siteindex_en">
+        aykit.
+      </a>
+    </p>
+    <p>
+      We at aykit hate data retention and love open-source. That is why shtfy is not storing unnessecary data. shtfy is storing only:
+      <dl>
+        <dt>
+          ID of Databaseentry
+        </dt> 
+        <dd>
+          Every DB-entry has an unique id (this is common with databases)
+        </dd>
+        <dt>
+          All URLs shortified
+        </dt>
+        <dd>
+          Every URL that has been shortified is saved to prevent multiple shortified versions and save us good-looking URLs.
+        </dd>
+        <dt>
+          Hits
+        </dt>
+        <dd>
+          We save how often a shortified URL has been visited.
+        </dd>
+        <dt>
+          Piwik visit tracking - Anonymised visits
+        </dt>
+        <dd>
+          Knowing how many people visit our service is always good for morale. However, we do our best to track as little as possible: We save your IP with the last digits anonymised (192.168.0.xxx) and we respect your Browser's 
+          <a href="http://donottrack.us">
+            Do-Not-Track 
+          </a>
+          setting. If you still don't trust us, we recommend usage of
+          <a href="http://www.ghostery.com">
+            Ghostery
+          </a>
+          or 
+          <a href="http://alternativeto.net/software/ghostery/">
+            similar software.
+          </a>
+      </dl>
+      <p>
+        Oh yeah, and we are advertisement-free.
+      </p>
+    </div>
+    <!-- Piwik -->
+      <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+          var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.gerade.org/";
+          _paq.push(["setTrackerUrl", u+"piwik.php"]);
+          _paq.push(["setSiteId", "28"]);
+          var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+          g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+    <!-- End Piwik Code -->
+  </body>
+</html>
