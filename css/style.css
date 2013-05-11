@@ -2,11 +2,12 @@
   font-family: 'Iceland';
   font-style: normal;
   font-weight: 400;
-  src: local('Iceland'), local('Iceland-Regular'), url(/font/iceland.woff) format('woff');
+  src: local('Iceland'), local('Iceland-Regular'), url(font/iceland.woff) format('woff');
 }
 
 html {
-	background-color: #5b5b5b;}
+	background-color: #5b5b5b;
+}
 
 h1 {
 	font-family: 'Iceland', cursive;
@@ -20,16 +21,20 @@ h1 {
 .about {
 	font-family: 'Arial';
 	font-size: 0.3em;
-	color: black; }
+	color: black;
+}
 .about a {
-	color: black;}
+	color: black;
+}
 
 .container {
 	margin-top: 10%;
-	padding: 1em;}
+	padding: 1em;
+}
 
 .shtfy {
 	font-family: 'Iceland', cursive; 
 	font-weight: bold; 
  	color: black; 
- 	font-size: 1.2em;}
+ 	font-size: 1.2em;
+ }
