@@ -9,6 +9,10 @@ html {
 	background-color: #5b5b5b;
 }
 
+body {
+	background: white;
+}
+
 h1 {
 	font-family: 'Iceland', cursive;
 	margin-bottom: 0;
@@ -16,8 +20,8 @@ h1 {
 }
 
 .shtfy-search {
-	text-align: center;
 	margin-top: 2em;
+	text-align: center;
 }
 
 .about {
@@ -33,9 +37,21 @@ h1 {
 	margin-bottom: 4px;
 }
 
-.container {
+.shtfy-container, .about-container {
 	margin-top: 10%;
 	padding: 1em;
+	min-width: 320px;
+}
+
+@media only screen and (min-width: 940px) {
+	.about-container {
+		margin-left: 12%;
+		margin-right: 12%;
+	}
+}
+
+.about-container {
+	padding-top: 2em;
 }
 
 .shtfy {
