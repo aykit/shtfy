@@ -32,12 +32,14 @@
         <input id="longurl" name="url" type="text" class="span2">
         <input type="submit" class="btn">
       </form>
+      <div id="qrcodeCanvas"></div>
       <ul id="shorturls" class="unstyled">
       </ul>
     </div>
   </div>
 
-  <script src="js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
   <script>
     var form = $("form");
     form.on("submit", function(e) {
@@ -55,6 +57,10 @@
       request.done(function (response) {
         var input = $("<input type=text readonly/>");
         input.val(response);
+
+		jQuery('#qrcodeCanvas').qrcode({
+			text	: response
+		});	
 
         input.on("click", function() {
           input.select();
