@@ -1,6 +1,8 @@
 <?php
 
-require("config.php");
+define("DB_DSN", getenv("SHTFY_DB_DSN"));
+define("DB_USER", getenv("SHTFY_DB_USER"));
+define("DB_PASSWORD", getenv("SHTFY_DB_PASSWORD"));
 
 if (isset($_GET["url"]))
 {
