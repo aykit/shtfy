@@ -6,35 +6,14 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/* \
  && a2dissite '*'
 
-# RUN apt-get update && apt-get install -y \
-#     curl \
-#     php-mbstring \
-#     php-intl \
-#     php-pear \
-#     php-dom \
-#     php-xml \
-#     php-json \
-#     php-pdo \
-#     php-gd \
-#     php-imagick \
-#     php-zip \
-#     php-pdo-pgsql \
-#     php-pdo-mysql \
-#     php-pgsql \
-#     php-mysql \
-#     php-auth-sasl \
-#     php-curl \
-#  && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \
+    php-pdo-pgsql \
+    php-pdo-mysql \
+    php-bcmath \
+ && rm -rf /var/lib/apt/lists/*
 
-RUN a2enmod \
-    # alias \
-    # auth_basic \
-    # expires \
-    # headers \
-    rewrite \
-    # vhost_alias \
- && a2disconf \
-    other-vhosts-access-log
+RUN a2enmod rewrite \
+ && a2disconf other-vhosts-access-log
 
 COPY site.conf /etc/apache2/sites-enabled/
 COPY *.html *.php /var/www/html/
