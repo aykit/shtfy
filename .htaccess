@@ -1,4 +1,4 @@
 RewriteEngine On
-RewriteRule /[0-9a-zA-Z]+$ /shtfy.php [L]
-RewriteRule /shorten/$ /shtfy.php [L]
-RewriteRule /$ /form.html [L]
+RewriteRule ^[0-9a-zA-Z]+$ /shtfy.php [L]
+RewriteRule ^shorten/$ /shtfy.php [L]
+RewriteRule ^$ /form.html [L]
