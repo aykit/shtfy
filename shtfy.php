@@ -18,7 +18,10 @@ function get_pdo()
 {
     static $pdo;
     if (!$pdo)
+    {
         $pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD) or die("database error");
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
     return $pdo;
 }
 
