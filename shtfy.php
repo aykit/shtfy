@@ -3,6 +3,7 @@
 define("DB_DSN", getenv("SHTFY_DB_DSN"));
 define("DB_USER", getenv("SHTFY_DB_USER"));
 define("DB_PASSWORD", getenv("SHTFY_DB_PASSWORD"));
+define("SITE_URL", getenv("SHTFY_SITE_URL"));
 
 if (isset($_GET["url"]))
 {
@@ -64,14 +65,14 @@ function shorten($url)
         $url = "http://$url";
 
     $token = get_token($url);
-    print($_SERVER["SCRIPT_URI"] . $token);
+    print(SITE_URL . $token);
 }
 
 function redirect($token)
 {
     $url = get_url($token);
     if (!$url)
-        $url = $_SERVER["SCRIPT_URI"];
+        $url = SITE_URL;
     header("Location: $url", true, 301);
 }
 
